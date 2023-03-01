@@ -1,10 +1,17 @@
-import { AppFooter, AppHeader } from 'components';
 import React from 'react';
-
-import { MainContent, Wrapper } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 
+import { AppFooter, AppHeader, MainSpinner } from 'components';
+import { MainContent, Wrapper } from './Layout.styled';
+import { useAuth } from 'hooks';
+
 const Layout = () => {
+  const { isLoading } = useAuth();
+
+  if (isLoading) {
+    return <MainSpinner />;
+  }
+
   return (
     <Wrapper>
       <AppHeader />
