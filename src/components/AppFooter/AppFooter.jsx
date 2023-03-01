@@ -1,7 +1,14 @@
 import React from 'react';
 
+import { Footer } from './AppFooter.styled';
+import { Container } from 'components';
+
 const AppFooter = () => {
-  return <div>AppFooter</div>;
+  return (
+    <Footer>
+      <Container></Container>
+    </Footer>
+  );
 };
 
 export default AppFooter;
