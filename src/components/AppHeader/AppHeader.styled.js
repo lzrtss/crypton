@@ -10,4 +10,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 12px;
+  }
 `;
