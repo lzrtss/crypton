@@ -1,10 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-tooltip/dist/react-tooltip.css';
+
 export const GlobalStyle = createGlobalStyle`
   :root {
     --color-dark-grey: #333333;
     --color-light-grey: #777777;
     --color-golden: #f2a900;
+    --color-red: #ff6347;
     --color-teal: #008080;
   }
 
