@@ -7,8 +7,10 @@ export { default as Container } from './Container/Container';
 export { default as Layout } from './Layout/Layout';
 export { default as MainNavbar } from './MainNavbar/MainNavbar';
 export { default as PrivateRoute } from './PrivateRoute/PrivateRoute';
+export { default as Title } from './Title/Title';
 export { default as UserName } from './UserName/UserName';
 
 export * from './Buttons';
 export * from './Links';
+export * from './Sections';
 export * from './Spinners';
