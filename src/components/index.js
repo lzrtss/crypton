@@ -11,6 +11,7 @@ export { default as Layout } from './Layout/Layout';
 export { default as MainNavbar } from './MainNavbar/MainNavbar';
 export { default as PriceChange } from './PriceChange/PriceChange';
 export { default as PrivateRoute } from './PrivateRoute/PrivateRoute';
+export { default as SearchBar } from './SearchBar/SearchBar';
 export { default as Title } from './Title/Title';
 export { default as UserName } from './UserName/UserName';
 

@@ -35,7 +35,9 @@ const CoinCard = ({ coin }) => {
           <Details>
             <Row>
               <Label>Daily Change: </Label>
-              <PriceChange change={change} />
+              <Value>
+                <PriceChange change={change} />
+              </Value>
             </Row>
             <Row>
               <Label>Price: </Label>
