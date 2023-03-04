@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   CoinList,
+  CoinsSectionSkeleton,
   Container,
   ErrorMessage,
   NoContentMessage,
@@ -16,7 +17,7 @@ import { useQuerySearch } from 'hooks/useQuerySearch';
 const CoinsPage = () => {
   const { searchQuery, handleChange } = useQuerySearch();
 
-  const { data, error } = useGetCoinsQuery({
+  const { data, error, isLoading } = useGetCoinsQuery({
     search: searchQuery,
   });
 
@@ -28,6 +29,7 @@ const CoinsPage = () => {
 
   return (
     <Container>
+      {isLoading ? <CoinsSectionSkeleton /> : null}
       <Section>
         <SectionHeader>
           <Title>{searchQuery ? 'Search Results' : 'Top Coins'}</Title>
