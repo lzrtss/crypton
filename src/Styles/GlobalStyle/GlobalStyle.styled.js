@@ -1,10 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-tooltip/dist/react-tooltip.css';
+
 export const GlobalStyle = createGlobalStyle`
   :root {
     --color-dark-grey: #333333;
     --color-light-grey: #777777;
     --color-golden: #f2a900;
+    --color-red: #ff6347;
     --color-teal: #008080;
   }
 
@@ -15,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    color: var(--color-dark-grey);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
