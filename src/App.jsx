@@ -2,13 +2,14 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Layout, PrivateRoute } from 'components';
+import { CoinsPage } from 'pages';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<div>Home Page</div>} />
-        <Route path="coins" element={<div>Coins Page</div>} />
+        <Route path="coins" element={<CoinsPage />} />
         <Route path="coins/:id" element={<div>Coin Details Page</div>} />
         <Route path="exchanges" element={<div>Exchanges Page</div>} />
         <Route
