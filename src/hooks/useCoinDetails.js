@@ -15,10 +15,12 @@ export const useCoinDetails = () => {
   };
 
   const {
-    data: coinDetails,
+    data,
     error: coinDetailsError,
     isLoading: isLoadingCoinDetails,
   } = useGetCoinByIdQuery(coinId);
+
+  const coinDetails = data?.data?.coin;
 
   const {
     data: coinHistory,
@@ -36,8 +38,7 @@ export const useCoinDetails = () => {
   return {
     chartData,
     coinDetails,
-    coinDetailsError,
-    coinHistoryError,
+    error: coinDetailsError || coinHistoryError,
     isLoading: isLoadingCoinHistory || isLoadingCoinDetails,
     priceChange,
     timePeriod,
