@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Chart } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -11,7 +12,6 @@ import {
 } from 'chart.js';
 
 import {
-  ErrorMessage,
   PriceChange,
   Section,
   SectionHeader,
@@ -21,6 +21,7 @@ import {
 } from 'components';
 import { formatNumber } from 'utils';
 import { CurrentPrice, Label, PriceInfo } from './ChartSection.styled';
+import { chartDataType, coinType } from 'types';
 
 ChartJS.register(
   CategoryScale,
@@ -34,17 +35,12 @@ ChartJS.register(
 const ChartSection = ({
   chartData,
   coin,
-  error,
   priceChange,
   timePeriod,
   timePeriods,
   handleTimePeriodChange,
 }) => {
   const { iconUrl: coinIcon, name: coinName, price: currentPrice } = coin;
-
-  if (error) {
-    return <ErrorMessage error={error?.message} />;
-  }
 
   return (
     <Section>
@@ -70,6 +66,15 @@ const ChartSection = ({
       <Chart type="line" data={chartData} />
     </Section>
   );
+};
+
+ChartSection.propTypes = {
+  chartData: chartDataType.isRequired,
+  coin: coinType.isRequired,
+  priceChange: PropTypes.string.isRequired,
+  timePeriod: PropTypes.string.isRequired,
+  timePeriods: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleTimePeriodChange: PropTypes.func.isRequired,
 };
 
 export default ChartSection;

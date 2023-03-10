@@ -3,6 +3,8 @@ import React from 'react';
 import {
   ChartSection,
   ChartSectionSkeleton,
+  CoinStatisticsSection,
+  CoinStatisticsSectionSkeleton,
   Container,
   ErrorMessage,
   GoBackLink,
@@ -13,13 +15,17 @@ const CoinDetailsPage = () => {
   const {
     chartData,
     coinDetails,
-    coinHistoryError,
+    error,
     isLoading: isLoadingCoinDetails,
     priceChange,
     timePeriod,
     timePeriods,
     handleTimePeriodChange,
   } = useCoinDetails();
+
+  if (error) {
+    return <ErrorMessage />;
+  }
 
   return (
     <Container>
@@ -29,13 +35,17 @@ const CoinDetailsPage = () => {
       ) : (
         <ChartSection
           chartData={chartData}
-          coin={coinDetails?.data?.coin}
-          error={coinHistoryError}
+          coin={coinDetails}
           priceChange={priceChange}
           timePeriod={timePeriod}
           timePeriods={timePeriods}
           handleTimePeriodChange={handleTimePeriodChange}
         />
+      )}
+      {isLoadingCoinDetails ? (
+        <CoinStatisticsSectionSkeleton />
+      ) : (
+        <CoinStatisticsSection coinDetails={coinDetails} />
       )}
     </Container>
   );
