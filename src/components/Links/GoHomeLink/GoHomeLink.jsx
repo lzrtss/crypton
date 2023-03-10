@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { LinkWrapper, Link } from './GoHomeLink.styled';
+import { SecondaryLink } from '../Links.styled';
+import { LinkWrapper } from './GoHomeLink.styled';
 
 const GoHomeLink = ({ props }) => {
   return (
     <LinkWrapper>
-      <Link to="/" {...props}>
+      <SecondaryLink to="/" {...props}>
         Go Home
-      </Link>
+      </SecondaryLink>
     </LinkWrapper>
   );
 };
