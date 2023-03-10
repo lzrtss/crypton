@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Layout, PrivateRoute } from 'components';
-import { CoinsPage } from 'pages';
+import { CoinsPage, NotFoundPage } from 'pages';
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<div>Not Found Page</div>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
