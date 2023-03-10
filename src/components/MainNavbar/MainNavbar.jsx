@@ -1,9 +1,12 @@
 import React from 'react';
 
+import { useAuth } from 'hooks';
+import { StyledNavLink } from 'components';
 import { Menu, MenuItem, NavBar } from './MainNavbar.styled';
-import { StyledNavLink } from 'components/Links';
 
 const MainNavbar = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <NavBar>
       <Menu>
@@ -18,6 +21,11 @@ const MainNavbar = () => {
         <MenuItem>
           <StyledNavLink to="/exchanges">Exchanges</StyledNavLink>
         </MenuItem>
+        {isAuthenticated ? (
+          <MenuItem>
+            <StyledNavLink to="watchlist">Watchlist</StyledNavLink>
+          </MenuItem>
+        ) : null}
       </Menu>
     </NavBar>
   );
