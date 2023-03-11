@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
@@ -17,8 +17,10 @@ const Layout = () => {
     <Wrapper>
       <AppHeader />
       <MainContent>
-        <Toaster position="top-center" reverseOrder={false} />
-        <Outlet />
+        <Suspense fallback={<MainSpinner />}>
+          <Toaster position="top-center" reverseOrder={false} />
+          <Outlet />
+        </Suspense>
       </MainContent>
       <AppFooter />
     </Wrapper>
