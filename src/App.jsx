@@ -8,6 +8,7 @@ import {
   ExchangesPage,
   HomePage,
   NotFoundPage,
+  WatchListPage,
 } from 'pages';
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
           path="watchlist"
           element={
             <PrivateRoute>
-              <div>Watchlist Page</div>
+              <WatchListPage />
             </PrivateRoute>
           }
         />
