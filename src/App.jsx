@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Layout, PrivateRoute } from 'components';
-import {
-  CoinDetailsPage,
-  CoinsPage,
-  ExchangesPage,
-  HomePage,
-  NotFoundPage,
-  WatchListPage,
-} from 'pages';
+import { HomePage } from 'pages';
+
+const CoinsPage = lazy(() => import('pages/CoinsPage/CoinsPage'));
+const CoinDetailsPage = lazy(() =>
+  import('pages/CoinDetailsPage/CoinDetailsPage'),
+);
+const ExchangesPage = lazy(() => import('pages/ExchangesPage/ExchangesPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
+const WatchListPage = lazy(() => import('pages/WatchListPage/WatchListPage'));
 
 const App = () => {
   return (
