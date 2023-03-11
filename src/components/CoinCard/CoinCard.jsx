@@ -59,7 +59,7 @@ const CoinCard = ({ coin }) => {
 };
 
 CoinCard.propTypes = {
-  coins: coinType,
+  coin: coinType,
 };
 
 CoinCard.defaultProps = {
