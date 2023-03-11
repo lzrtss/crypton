@@ -20,3 +20,8 @@ export const StyledNavLink = styled(NavLink)`
     border-bottom: 2px solid var(--color-teal);
   }
 `;
+
+export const SecondaryLink = styled(StyledLink)`
+  color: var(--color-teal);
+  border-bottom: 1px solid var(--color-teal);
+`;
