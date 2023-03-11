@@ -6,6 +6,7 @@ import {
   UnAuthenticatedWatchListIcon,
 } from 'components';
 import { Icon } from './WatchListIcon.styled';
+import { coinType } from 'types';
 
 const WatchListIcon = ({ coin }) => {
   const { isAuthenticated } = useAuth();
@@ -19,6 +20,10 @@ const WatchListIcon = ({ coin }) => {
       )}
     </Icon>
   );
+};
+
+WatchListIcon.propTypes = {
+  icon: coinType,
 };
 
 export default WatchListIcon;
