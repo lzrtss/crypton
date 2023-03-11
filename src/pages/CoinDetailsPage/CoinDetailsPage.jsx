@@ -2,13 +2,12 @@ import React from 'react';
 
 import {
   ChartSection,
-  ChartSectionSkeleton,
   CoinStatisticsSection,
-  CoinStatisticsSectionSkeleton,
   Container,
   ErrorMessage,
   GoBackLink,
 } from 'components';
+import CoinDetailsPageSkeleton from './CoinDetailsPageSkeleton';
 import { useCoinDetails } from 'hooks';
 
 const CoinDetailsPage = () => {
@@ -27,26 +26,24 @@ const CoinDetailsPage = () => {
     return <ErrorMessage />;
   }
 
+  if (isLoadingCoinDetails) {
+    return <CoinDetailsPageSkeleton />;
+  }
+
   return (
     <Container>
       <GoBackLink />
-      {isLoadingCoinDetails ? (
-        <ChartSectionSkeleton />
-      ) : (
-        <ChartSection
-          chartData={chartData}
-          coin={coinDetails}
-          priceChange={priceChange}
-          timePeriod={timePeriod}
-          timePeriods={timePeriods}
-          handleTimePeriodChange={handleTimePeriodChange}
-        />
-      )}
-      {isLoadingCoinDetails ? (
-        <CoinStatisticsSectionSkeleton />
-      ) : (
-        <CoinStatisticsSection coinDetails={coinDetails} />
-      )}
+
+      <ChartSection
+        chartData={chartData}
+        coin={coinDetails}
+        priceChange={priceChange}
+        timePeriod={timePeriod}
+        timePeriods={timePeriods}
+        handleTimePeriodChange={handleTimePeriodChange}
+      />
+
+      <CoinStatisticsSection coinDetails={coinDetails} />
     </Container>
   );
 };
