@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   CoinList,
-  CoinsSectionSkeleton,
   Container,
   ErrorMessage,
   NoContentMessage,
@@ -13,6 +12,7 @@ import {
 } from 'components';
 import { useGetCoinsQuery } from 'store/services';
 import { useQuerySearch } from 'hooks/useQuerySearch';
+import CoinsPageSkeleton from './CoinsPageSkeleton';
 
 const CoinsPage = () => {
   const { searchQuery, handleChange } = useQuerySearch();
@@ -24,12 +24,15 @@ const CoinsPage = () => {
   const coins = data?.data.coins;
 
   if (error) {
-    return <ErrorMessage error={error?.message} />;
+    return <ErrorMessage />;
+  }
+
+  if (isLoading) {
+    return <CoinsPageSkeleton />;
   }
 
   return (
     <Container>
-      {isLoading ? <CoinsSectionSkeleton /> : null}
       <Section>
         <SectionHeader>
           <Title>{searchQuery ? 'Search Results' : 'Top Coins'}</Title>
