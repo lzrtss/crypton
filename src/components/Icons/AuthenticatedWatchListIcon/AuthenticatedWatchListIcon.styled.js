@@ -8,7 +8,7 @@ export const Icon = styled.div`
 `;
 
 export const FilledStarIcon = styled(AiFillStar)`
-  color: var(--color-gold);
+  color: var(--color-golden);
 
   &:focus {
     border: none;
