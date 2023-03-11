@@ -4,7 +4,7 @@ import millify from 'millify';
 import { Row, Section, SectionHeader, Title } from 'components';
 import { Col, Label, Statistics, Value } from './CoinStatisticsSection.styled';
 import { formatDate, formatNumber } from 'utils';
-import { coinDetailsType } from 'types/coinDetailsType';
+import { coinDetailsType } from 'types';
 
 const CoinStatisticsSection = ({ coinDetails }) => {
   return (
