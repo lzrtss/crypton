@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import ScrollToTop from 'react-scroll-to-top';
 import { Toaster } from 'react-hot-toast';
 
 import { AppFooter, AppHeader, MainSpinner } from 'components';
@@ -20,6 +21,7 @@ const Layout = () => {
         <Suspense fallback={<MainSpinner />}>
           <Toaster position="top-center" reverseOrder={false} />
           <Outlet />
+          <ScrollToTop smooth top={200} width={'36'} height={'36'} />
         </Suspense>
       </MainContent>
       <AppFooter />
