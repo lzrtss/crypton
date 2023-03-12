@@ -26,10 +26,10 @@ export const usePreviewData = (limit = 4) => {
   } = useGetCoinStatsQuery();
 
   const {
-    data: exchanges,
+    data: exchangesData,
     error: exchangesError,
     isLoading: isLoadingExchanges,
-  } = useGetExchangesQuery(limit);
+  } = useGetExchangesQuery();
 
   const isLoading =
     isLoadingWatchList ||
@@ -44,7 +44,7 @@ export const usePreviewData = (limit = 4) => {
   return {
     coins,
     error,
-    exchanges,
+    exchanges: exchangesData?.slice(0, limit),
     isLoading,
     stats,
   };

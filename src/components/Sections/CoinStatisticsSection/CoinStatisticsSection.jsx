@@ -91,7 +91,7 @@ const CoinStatisticsSection = ({ coinDetails }) => {
 };
 
 CoinStatisticsSection.propTypes = {
-  coinDetails: coinDetailsType,
+  coinDetails: coinDetailsType.isRequired,
 };
 
 export default CoinStatisticsSection;

@@ -15,15 +15,13 @@ import { useQuerySearch } from 'hooks';
 import { useGetExchangesQuery } from 'store/services';
 
 const ExchangesPage = () => {
-  const { data, error, isLoading } = useGetExchangesQuery();
-
-  const topExchanges = data?.slice(0, 20);
+  const { data: exchanges, error, isLoading } = useGetExchangesQuery();
 
   const {
     filteredData: filteredExchanges,
     searchQuery,
     handleChange,
-  } = useQuerySearch(topExchanges);
+  } = useQuerySearch(exchanges);
 
   if (error) {
     return <ErrorMessage />;

@@ -20,9 +20,4 @@ SearchBar.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-SearchBar.defaultProps = {
-  value: '',
-  onChange: () => {},
-};
-
 export default SearchBar;

@@ -1,15 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Link, LinkWrapper } from './ShowMoreLink.styled';
 
-const ShowMoreLink = ({ to, ...otherProps }) => {
+const ShowMoreLink = ({ to }) => {
   return (
     <LinkWrapper>
-      <Link to={to} {...otherProps}>
-        Show More
-      </Link>
+      <Link to={to}>Show More</Link>
     </LinkWrapper>
   );
+};
+
+ShowMoreLink.propTypes = {
+  to: PropTypes.string.isRequired,
 };
 
 export default ShowMoreLink;

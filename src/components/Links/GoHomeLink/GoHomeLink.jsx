@@ -3,12 +3,10 @@ import React from 'react';
 import { SecondaryLink } from '../Links.styled';
 import { LinkWrapper } from './GoHomeLink.styled';
 
-const GoHomeLink = ({ props }) => {
+const GoHomeLink = () => {
   return (
     <LinkWrapper>
-      <SecondaryLink to="/" {...props}>
-        Go Home
-      </SecondaryLink>
+      <SecondaryLink to="/">Go Home</SecondaryLink>
     </LinkWrapper>
   );
 };
