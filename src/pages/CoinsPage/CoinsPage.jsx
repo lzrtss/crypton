@@ -13,14 +13,22 @@ import {
 import { useGetCoinsQuery } from 'store/services';
 import { useQuerySearch } from 'hooks/useQuerySearch';
 import CoinsPageSkeleton from './CoinsPageSkeleton';
+import { useWatchList } from 'hooks';
 
 const CoinsPage = () => {
   const { searchQuery, handleChange } = useQuerySearch();
 
-  const { data, error, isLoading } = useGetCoinsQuery({
+  const {
+    data,
+    error,
+    isLoading: isLoadingCoinList,
+  } = useGetCoinsQuery({
     search: searchQuery,
   });
 
+  const { isLoading: isLoadingWatchList } = useWatchList();
+
+  const isLoading = isLoadingCoinList || isLoadingWatchList;
   const coins = data?.data.coins;
 
   if (error) {
