@@ -27,7 +27,7 @@ const HomePage = () => {
     <Container>
       <MarketStatisticsSection stats={stats} />
       <CoinsSection coins={coins} />
-      <ExchangesSection exchanges={exchanges?.slice(0, limit)} preview />
+      <ExchangesSection exchanges={exchanges} />
     </Container>
   );
 };

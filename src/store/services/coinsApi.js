@@ -14,7 +14,7 @@ export const coinsApi = createApi({
   tagTypes: ['Coin'],
   endpoints: builder => ({
     getCoins: builder.query({
-      query: ({ limit = 20, search = '' }) => ({
+      query: ({ limit, search }) => ({
         url: '/coins',
         method: 'GET',
         params: {
