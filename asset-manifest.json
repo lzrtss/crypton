@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crypton/static/css/main.9892ea71.css",
-    "main.js": "/crypton/static/js/main.37a6d736.js",
+    "main.js": "/crypton/static/js/main.cd3671bb.js",
     "index.html": "/crypton/index.html",
     "main.9892ea71.css.map": "/crypton/static/css/main.9892ea71.css.map",
-    "main.37a6d736.js.map": "/crypton/static/js/main.37a6d736.js.map"
+    "main.cd3671bb.js.map": "/crypton/static/js/main.cd3671bb.js.map"
   },
   "entrypoints": [
     "static/css/main.9892ea71.css",
-    "static/js/main.37a6d736.js"
+    "static/js/main.cd3671bb.js"
   ]
 }
