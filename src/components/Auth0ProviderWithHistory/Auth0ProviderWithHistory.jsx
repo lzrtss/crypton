@@ -21,7 +21,9 @@ const Auth0ProviderWithHistory = ({ children }) => {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={redirectUri}
+      authorizationParams={{
+        redirect_uri: redirectUri,
+      }}
       onRedirectCallback={onRedirectCallback}
     >
       {children}
