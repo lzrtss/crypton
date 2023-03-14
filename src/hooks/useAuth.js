@@ -18,7 +18,9 @@ export const useAuth = () => {
   };
 
   const handleLogout = () => {
-    logout({ logoutParams: { returnTo: window.location.origin } });
+    logout({
+      logoutParams: { returnTo: process.env.REACT_APP_AUTH0_CALLBACK_URL },
+    });
   };
 
   return {

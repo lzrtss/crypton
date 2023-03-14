@@ -13,7 +13,7 @@ const root = createRoot(container);
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.REACT_APP_AUTH0_BASE_NAME}>
       <Auth0ProviderWithHistory>
         <App />
         <GlobalStyle />
