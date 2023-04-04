@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import store from 'store/configureStore';
 import { Auth0ProviderWithHistory } from 'components';
+import 'normalize.css';
 import { GlobalStyle } from 'styles';
 
 const container = document.getElementById('root');

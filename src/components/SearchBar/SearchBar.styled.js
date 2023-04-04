@@ -5,4 +5,8 @@ export const DebounceTextInput = styled(DebounceInput)`
   width: 380px;
   padding: 5px 10px;
   font-size: 16px;
+
+  &:hover {
+    outline: none;
+  }
 `;

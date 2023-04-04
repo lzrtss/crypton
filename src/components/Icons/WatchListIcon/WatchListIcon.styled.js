@@ -18,7 +18,7 @@ export const FilledStarIcon = styled(AiFillStar)`
 `;
 
 export const OutlinedStarIcon = styled(AiOutlineStar)`
-  color: #333;
+  color: var(--color-dark-grey);
 
   &:focus {
     border: none;
